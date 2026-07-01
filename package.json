@@ -1,0 +1,39 @@
+{
+  "name": "misp",
+  "version": "0.1.0",
+  "description": "Visual MIPS editor/debugger — a TypeScript virtual CPU that animates execution",
+  "type": "module",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "electron": "npm run build && electron .",
+    "package": "npm run build && electron-builder --config electron-builder.yml",
+    "package:mac": "npm run build && electron-builder --config electron-builder.yml --mac",
+    "package:win": "npm run build && electron-builder --config electron-builder.yml --win",
+    "package:linux": "npm run build && electron-builder --config electron-builder.yml --linux"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@xstate/fsm": "^2.1.0",
+    "codemirror": "^6.0.1",
+    "@codemirror/state": "^6.5.2",
+    "@codemirror/view": "^6.36.4",
+    "@codemirror/commands": "^6.8.0",
+    "@codemirror/language": "^6.10.8",
+    "@codemirror/autocomplete": "^6.18.4",
+    "@codemirror/search": "^6.5.10",
+    "solid-js": "^1.9.5",
+    "thememirror": "^2.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.0",
+    "vite-plugin-solid": "^2.11.2"
+  }
+}

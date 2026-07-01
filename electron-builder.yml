@@ -1,0 +1,54 @@
+# electron-builder configuration
+# Docs: https://www.electron.build/configuration
+appId: com.salemkode.misp-editor
+productName: misp
+copyright: Copyright © Salem Mohammed Shamakh
+
+directories:
+  output: release
+  buildResources: build
+
+# Everything shipped inside the app. The renderer is bundled into dist/ by Vite,
+# so no runtime node_modules are required.
+files:
+  - dist/**/*
+  - electron/**/*
+  - package.json
+
+# Don't bundle source or tooling.
+asarUnpack: []
+
+mac:
+  category: public.app-category.developer-tools
+  hardenedRuntime: false
+  target:
+    - target: dmg
+      arch: [x64, arm64]
+    - target: zip
+      arch: [x64, arm64]
+
+win:
+  target:
+    - target: nsis
+      arch: [x64]
+    - target: portable
+      arch: [x64]
+
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+
+linux:
+  category: Development
+  target:
+    - target: AppImage
+      arch: [x64]
+    - target: deb
+      arch: [x64]
+
+# Publish to GitHub Releases when building from a tag (used by CI).
+publish:
+  provider: github
+  owner: salemkode
+  repo: misp-editor
