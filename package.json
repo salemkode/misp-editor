@@ -4,6 +4,7 @@
   "description": "Visual MIPS editor/debugger — a TypeScript virtual CPU that animates execution",
   "type": "module",
   "main": "electron/main.cjs",
+  "author": "Salem Mohammed Shamakh <58360393+salemkode@users.noreply.github.com> (https://github.com/salemkode)",
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
